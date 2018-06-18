@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Ruby's eval, attr_accessor, attr_reader, and  attr_writer. Rails has_many, has_one, belongs_to"
+title:  "Ruby's eval, attr_accessor, attr_reader, and  attr_writer; Rails has_many, has_one, belongs_to"
 date:   2018-06-17 12:37:47 +0530
-categories: ruby attr_accessor attr_reader attr_writer
+categories: ruby rails
 ---
 
-This is a long post, it covers a variety of topics needed to understand how attr_accessor in Ruby works or how has_many works in an Active Record association. 
+This is a long post, it covers a variety of topics needed to understand how attr_accessor in Ruby works or how has_many works in an Active Record association. I would recommend you to code along side while following this post. I have attached code links with code snippet as well.
 
 # 1 The eval Function
 One of the most amazing functions that I find in Ruby Programming Language is the eval function. There is so much one can do with it. 
@@ -43,8 +43,8 @@ end
 {% endhighlight %}
 
 If I save and run the above code I get the following output
+![My helpful screenshot]({{ "/images/2018-06-21-my-own-attr-accessor/exec1.png" | absolute_url}})
 
-`at the start of person class`
 
 Ruby started loading the Person class and encountered a puts statement, and it ran the put statement. 
 Let's add a few more lines to our code. 
@@ -67,9 +67,7 @@ end
 
 Output: 
 
-`at the starting of person class`
-
-`at the end of person class`
+![My helpful screenshot]({{ "/images/2018-06-21-my-own-attr-accessor/exec2.png" | absolute_url}})
 
 We all know that we cannot access name and age of an instance of the Person class as they would be private variables, and we need to define getters and setters for it. 
 One way is to define your own getter and setter, the other way is to use attr_accessor. We won't be using any of it, just see the following code. 
@@ -102,9 +100,15 @@ puts(person.name)
 
 {% endhighlight %}
 
-I added a class method `my_attr_reader`, used self keyword to do it. We'll discuss self keyword in another blog, just need  to know that for this blog that this is a class method. 
+Output: 
 
-As soon as I defined my_attr_reader, I called it with "name" argument, and it evaluated the following string as code
+![My helpful screenshot]({{ "/images/2018-06-21-my-own-attr-accessor/exec3.png" | absolute_url}})
+
+
+I added a class method `my_attr_reader`, used self keyword to do it. We'll discuss self keyword in another blog. You just need to know that self keywords here is used to describe a class method. Self keyword is a long blog post in itself.  
+
+As soon as I defined my_attr_reader, I called it with "name" argument, and it evaluated the following string as code. The following code is added to the class at runtime. 
+This is a very powerful tool and a lot of things are build over the similar concept. And hence we defined our own attr_reader method, you may do the same for attr_accessor and attr_writer methods, you may define their own. 
 
 {% highlight ruby %}
 
@@ -146,6 +150,11 @@ Person.my_attr_reader "age"
 
 puts (person.age)
 {% endhighlight %}
+
+Output:
+
+![My helpful screenshot]({{ "/images/2018-06-21-my-own-attr-accessor/exec3.png" | absolute_url}})
+
 
 Voila!!! It works, it works as we were able to change the Person class at run time, and we added a getter after the person object was made. we'll discuss openness of classes in Ruby on another blog. 
 
