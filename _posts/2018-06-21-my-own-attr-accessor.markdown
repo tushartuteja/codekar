@@ -7,7 +7,7 @@ comments: true
 tags: eval, attr_accessor, attr_reader, attr_writer, rails, has_many, has_one, belongs_to
 ---
 
-This is my first blog post and the only post right now :) , it covers a variety of topics needed to understand how attr_accessor in Ruby works or how has_many works in an Active Record association. I would recommend you to code alongside while following this post. I have attached code links with code snippet as well.
+This is my first blog post and the only post right now :) , it covers a variety of topics needed to understand how attr_accessor in Ruby works or how has_many works in an Active Record association. I would recommend you to code alongside while following this post. I have attached code links with code snippets as well.
 
 # 1 The eval Function
 One of the most amazing functions that I find in Ruby Programming Language is the eval function. There is so much one can do with it. 
@@ -195,9 +195,10 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
 */
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
-s.src = 'https://coderkar-com.disqus.com/embed.js';
+s.src = 'https://codekar-com.disqus.com/embed.js';
 s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
