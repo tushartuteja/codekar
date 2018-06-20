@@ -173,7 +173,7 @@ One thing to note is that we cannot call Ruby's attr_accessor, and the likes of 
 # 3 Rails has_many, has_one, belongs_to
 
 I think by now you guys would have figured out how how_many, has_one and belongs_to work. 
-It would a good assignment for your guys to write your own has_many, has_one and belongs_to function. 
+It would be a good assignment for your guys to write your own has_many, has_one and belongs_to function. 
 
 Ping me if you have any doubts.
 
